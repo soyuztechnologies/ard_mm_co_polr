@@ -1,0 +1,398 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/HTML5.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5" />
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/ard/ZMM_C_CO_GETLIST_CDS/$metadata">
+        <edmx:Include Namespace="xARDxZMM_C_CO_GETLIST_CDS" />
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="xARDxZMM_C_CO_GETLIST_CDS.xARDxZMM_C_CO_GETLISTType">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <!-- <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>TabEbeln}" />
+                            <PropertyValue Property="Value" Path="Ebeln" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="8rem" />
+                                </Record>
+                            </Annotation>
+                        </Record> -->
+                        <!-- <Record Type="UI.DataFieldWithIntentBasedNavigation">
+                            <PropertyValue Property="Value" Path="Ebeln"/>
+                            <PropertyValue Property="SemanticObject" String="PurchaseOrder"/>
+                            <PropertyValue Property="Action" String="display"/>
+                        </Record> -->
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>BSART}" />
+                            <PropertyValue Property="Value" Path="Bsart" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="9rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>WHGBTR}" />
+                            <PropertyValue Property="Value" Path="Whgbtr" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="8rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>BEDAT}" />
+                            <PropertyValue Property="Value" Path="Bedat" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="8rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>Ebelp}" />
+                            <PropertyValue Property="Value" Path="Ebelp" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="6rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>TabLoekz}" />
+                            <PropertyValue Property="Value" Path="Loekz" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="9rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>TabTxz01}" />
+                            <PropertyValue Property="Value" Path="Txz01" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="12rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>Eindt}" />
+                            <PropertyValue Property="Value" Path="Eindt" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>Lifnr}" />
+                            <PropertyValue Property="Value" Path="Lifnr" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="6rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>Name1}" />
+                            <PropertyValue Property="Value" Path="Name1" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="12rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>Ekorg}" />
+                            <PropertyValue Property="Value" Path="Ekorg" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="11rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>Bukrs}" />
+                            <PropertyValue Property="Value" Path="Bukrs" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="8rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>UNSEZ}" />
+                            <PropertyValue Property="Value" Path="Unsez" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="8rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>IHREZ}" />
+                            <PropertyValue Property="Value" Path="Ihrez" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>SUBMI}" />
+                            <PropertyValue Property="Value" Path="Submi" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>Ekgrp}" />
+                            <PropertyValue Property="Value" Path="Ekgrp" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="9rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>WERKS}" />
+                            <PropertyValue Property="Value" Path="Werks" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="5rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>PRODUCTTYPE}" />
+                            <PropertyValue Property="Value" Path="Producttype" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="10rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>TabElikz}" />
+                            <PropertyValue Property="Value" Path="Elikz" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>TabErekz}" />
+                            <PropertyValue Property="Value" Path="Erekz" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>EFFWR}" />
+                            <PropertyValue Property="Value" Path="Effwr" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="13rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>Matkl}" />
+                            <PropertyValue Property="Value" Path="Matkl" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="8rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>MENGE}" />
+                            <PropertyValue Property="Value" Path="Menge" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="8rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>MEINS}" />
+                            <PropertyValue Property="Value" Path="Meins" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="9rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>Matnr}" />
+                            <PropertyValue Property="Value" Path="Matnr" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="9rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>MTART}" />
+                            <PropertyValue Property="Value" Path="Mtart" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>KNTTP}" />
+                            <PropertyValue Property="Value" Path="Knttp" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="9rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>CoZuko}" />
+                            <PropertyValue Property="Value" Path="CoZuko" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="9rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>KOSTL}" />
+                            <PropertyValue Property="Value" Path="Kostl" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="8rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>TabSakto}" />
+                            <PropertyValue Property="Value" Path="Sakto" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>PsPspPnr}" />
+                            <PropertyValue Property="Value" Path="PsPspPnr" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="8rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>ANLN1}" />
+                            <PropertyValue Property="Value" Path="Anln1" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="6rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>ANLN2}" />
+                            <PropertyValue Property="Value" Path="Anln2" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="11rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>GSBER}" />
+                            <PropertyValue Property="Value" Path="Gsber" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="10rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>MWSKZ}" />
+                            <PropertyValue Property="Value" Path="Mwskz" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="10rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>TabBSTYP}" />
+                            <PropertyValue Property="Value" Path="Bstyp" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="6rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>Waers}" />
+                            <PropertyValue Property="Value" Path="Waers" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="10rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>Zekkn}" />
+                            <PropertyValue Property="Value" Path="Zekkn" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="16rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>NameTextc}" />
+                            <PropertyValue Property="Value" Path="NameTextc" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="12rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

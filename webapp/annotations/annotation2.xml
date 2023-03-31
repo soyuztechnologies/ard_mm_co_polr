@@ -1,0 +1,450 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/HTML5.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5" />
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication" />
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/ard/MM_CO_FIORI_SRV/$metadata">
+        <edmx:Include Namespace="ARD.MM_CO_FIORI_SRV" />
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Lifnr">
+                <!-- <Annotation Term="Common.Text" Path="Name1"/> -->
+                <Annotation Term="Common.Label" String="Lieferant" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="C_MM_SmplSupplierValueHelp" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Lifnr" />
+                                    <PropertyValue Property="ValueListProperty" String="Supplier" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="SupplierName" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="CompanyCode" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="Country" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="SupplierAccountGroup" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Ebeln">
+                <Annotation Term="Common.Label" String="Bestellnummer" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="EtListSet" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Ebeln" />
+                                    <PropertyValue Property="ValueListProperty" String="Ebeln" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="Lifnr" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="Ekorg" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="Ekgrp" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="Bukrs" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Bukrs">
+                <Annotation Term="Common.Label" String="Buchungskreis" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="C_MM_CompanyCodeValueHelp" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Bukrs" />
+                                    <PropertyValue Property="ValueListProperty" String="CompanyCode" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="CompanyCodeName" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Bstyp">
+                <Annotation Term="Common.Label" String="Belegtyp" />
+                <Annotation Term="Common.FilterDefaultValue" String="F" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="C_PurchasingDocCategoryVH" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Bstyp" />
+                                    <PropertyValue Property="ValueListProperty" String="PurchasingDocumentCategory" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="PurchasingDocumentCategoryName" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/CoZuko">
+                <Annotation Term="Common.Label" String="Zusatzkontierung" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Mtart">
+                <Annotation Term="Common.Label" String="Materialart" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="C_SchedAgrmtMassUpdtMatlTypeVH" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Mtart" />
+                                    <PropertyValue Property="ValueListProperty" String="MaterialType" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Matnr">
+                <Annotation Term="Common.Label" String="Materialnummer" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="C_MM_MaterialValueHelp" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Matnr" />
+                                    <PropertyValue Property="ValueListProperty" String="Material" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="Plant" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="MaterialGroup" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Matkl">
+                <Annotation Term="Common.Label" String="Warengruppe" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="C_MM_MaterialGroupValueHelp" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Matkl" />
+                                    <PropertyValue Property="ValueListProperty" String="MaterialGroup" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Waers">
+                <Annotation Term="Common.Label" String="Währung" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="I_Currency" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Waers" />
+                                    <PropertyValue Property="ValueListProperty" String="Currency" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="CurrencyISOCode" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Ekgrp">
+                <Annotation Term="Common.Label" String="Einkäufergruppe" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="C_PurchasingGroupValueHelp" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Ekgrp" />
+                                    <PropertyValue Property="ValueListProperty" String="PurchasingGroup" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="PurchasingGroupName" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="PhoneNumber" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="FaxNumber" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="EmailAddress" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Ekorg">
+                <Annotation Term="Common.Label" String="Einkaufsorganisation" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="C_PurchasingOrgValueHelp" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Ekorg" />
+                                    <PropertyValue Property="ValueListProperty" String="PurchasingOrganization" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="CompanyCode" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Werks">
+                <Annotation Term="Common.Label" String="Werk" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="C_MM_PlantValueHelp" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Werks" />
+                                    <PropertyValue Property="ValueListProperty" String="Plant" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="PurchasingOrganization" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="CityName" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Kostl">
+                <Annotation Term="Common.Label" String="Kostenstelle" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="C_MM_CostCenterValueHelp" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Kostl" />
+                                    <PropertyValue Property="ValueListProperty" String="CostCenter" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="ControllingArea" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="CompanyCodeCompanyCode" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Ebelp">
+                <Annotation Term="Common.Label" String="Position" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Loekz">
+                <Annotation Term="Common.Label" String="Sperrkennzeichen/Löschkennzeichen" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Eindt">
+                <Annotation Term="Common.Label" String="Lieferdatum" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Unsez">
+                <Annotation Term="Common.Label" String="Unser Zeichen" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Ihrez">
+                <Annotation Term="Common.Label" String="Ihr Zeichen" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Producttype">
+                <Annotation Term="Common.Label" String="Produkttypgruppe" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Elikz">
+                <Annotation Term="Common.Label" String="Endlieferungskennzeichen" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Effwr">
+                <Annotation Term="Common.Label" String="Effektivwert Bestellposition" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Erekz">
+                <Annotation Term="Common.Label" String="Endrechnungskennzeichen" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Menge">
+                <Annotation Term="Common.Label" String="Bestellmenge" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Meins">
+                <Annotation Term="Common.Label" String="Mengeneinheit" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Knttp">
+                <Annotation Term="Common.Label" String="Kontierungstyp" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Sakto">
+                <Annotation Term="Common.Label" String="Sachkonto" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/PsPspPnr">
+                <Annotation Term="Common.Label" String="PSP-Element" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Anln1">
+                <Annotation Term="Common.Label" String="Anlage" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Anln2">
+                <Annotation Term="Common.Label" String="Anlagenunternummer" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Gsber">
+                <Annotation Term="Common.Label" String="Geschäftsbereich" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Mwskz">
+                <Annotation Term="Common.Label" String="Steuerkennzeichen" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Aedat">
+                <Annotation Term="Common.Label" String="Laufzeitbeginn" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Bedat">
+                <Annotation Term="Common.Label" String="Laufzeitende" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Bsart">
+                <Annotation Term="Common.Label" String="Bestellart" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="C_PurchasingDocTypeValueHelp" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Bsart" />
+                                    <PropertyValue Property="ValueListProperty" String="PurchasingDocumentType" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Bstyp" />
+                                    <PropertyValue Property="ValueListProperty" String="PurchasingDocumentCategory" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="ValueListProperty" String="PurchasingDocumentTypeName" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Ernam">
+                <Annotation Term="Common.Label" String="Angelegt von" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Etenr">
+                <Annotation Term="Common.Label" String="Zeitplanlinie" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Submi">
+                <Annotation Term="Common.Label" String="Submission" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Whgbtr">
+                <Annotation Term="Common.Label" String="Restobligo" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Txz01">
+                <Annotation Term="Common.Label" String="Kurztext" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList">
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType">
+                        <PropertyValue Property="TypeName" String="Auftragsbestätigung" />
+                        <PropertyValue Property="TypeNamePlural" String="Ergebnis" />
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Ebeln</PropertyPath>
+                        <PropertyPath>Bsart</PropertyPath>
+                        <PropertyPath>Bstyp</PropertyPath>
+                        <PropertyPath>Lifnr</PropertyPath>
+                        <PropertyPath>Ernam</PropertyPath>
+                        <PropertyPath>Aedat</PropertyPath>
+                        <PropertyPath>Bedat</PropertyPath>
+                        <PropertyPath>Ekorg</PropertyPath>
+                        <PropertyPath>Ekgrp</PropertyPath>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>Unsez</PropertyPath>
+                        <PropertyPath>Ihrez</PropertyPath>
+                        <PropertyPath>Submi</PropertyPath>
+                        <PropertyPath>Loekz</PropertyPath>
+                        <PropertyPath>Werks</PropertyPath>
+                        <PropertyPath>Eindt</PropertyPath>
+                        <PropertyPath>Knttp</PropertyPath>
+                        <PropertyPath>Txz01</PropertyPath>
+                        <PropertyPath>Matkl</PropertyPath>
+                        <PropertyPath>Matnr</PropertyPath>
+                        <PropertyPath>Mtart</PropertyPath>
+                        <PropertyPath>Producttype</PropertyPath>
+                        <PropertyPath>Elikz</PropertyPath>
+                        <PropertyPath>Erekz</PropertyPath>
+                        <PropertyPath>Sakto</PropertyPath>
+                        <PropertyPath>Kostl</PropertyPath>
+                        <PropertyPath>PsPspPnr</PropertyPath>
+                        <PropertyPath>Anln1</PropertyPath>
+                        <PropertyPath>Anln2</PropertyPath>
+                        <PropertyPath>CoZuko</PropertyPath>
+                        <PropertyPath>Konnr</PropertyPath>
+                        <PropertyPath>Titel</PropertyPath>
+                    </Collection>
+                </Annotation>
+                
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.C_MM_SmplSupplierValueHelpType">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Supplier" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SupplierName" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCode" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Country" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SupplierAccountGroup" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

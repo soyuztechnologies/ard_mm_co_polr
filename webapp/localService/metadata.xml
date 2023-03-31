@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://m4d:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="xARDxZMM_C_CO_GETLIST_CDS" xml:lang="de" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="xARDxZMM_C_CO_GETLISTType" sap:label="CO Get List" sap:semantics="aggregate" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:filterable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="TotaledProperties" Type="Edm.String" sap:aggregation-role="totaled-properties-list" sap:is-annotation="true" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="EbelnC" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Einkaufsbeleg" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Matnr" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:label="Materialnummer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Werks" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Werk" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Lifnr" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Lieferant" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Mwskz" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:label="Steuerkennzeichen" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Titel" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:label="vertragstitel" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Bsart" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Einkaufsbelegart" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Ebelp" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:label="Effektivwert Bestellposition" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Unsez" Type="Edm.String" MaxLength="12" sap:aggregation-role="dimension" sap:label="Unser Zeichen" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CoZuko" Type="Edm.String" MaxLength="9" sap:aggregation-role="dimension" sap:label="Zusatzkontierung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Ekorg" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Einkaufsorganisation" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Zekkn" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:label="Kontierungsnummer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Name1" Type="Edm.String" MaxLength="80" sap:aggregation-role="dimension" sap:label="Name Lieferant" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Txz01" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:label="Text" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Kostl" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Kostenstelle" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Sakto" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Kostenart" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Loekz" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:label="Lösch/Sperrkz" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Waers" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:label="Währung" sap:creatable="false" sap:updatable="false" sap:value-list="standard" sap:semantics="currency-code"/>
+                <Property Name="PsPspPnr" Type="Edm.String" MaxLength="24" sap:aggregation-role="dimension" sap:label="PSP-Element" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Eindt" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="Eindt_T" sap:label="Lieferdatum" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+                <Property Name="Eindt_T" Type="Edm.String" MaxLength="10" sap:label="Lieferdatum (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Matkl" Type="Edm.String" MaxLength="9" sap:aggregation-role="dimension" sap:label="Warengruppe" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Anln1" Type="Edm.String" MaxLength="12" sap:aggregation-role="dimension" sap:label="Anlage" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Producttype" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:label="Produkttypgruppe" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Mtart" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Materialart" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Ebeln" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Einkaufsbeleg" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Bstyp" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:label="Belegtyp" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="Kdate" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="Kdate_T" sap:label="Laufzeitende" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+                <Property Name="Kdate_T" Type="Edm.String" MaxLength="10" sap:label="Laufzeitende (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Erekz" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:label="Endrech-Kz" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="Gsber" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Geschäftsbereich" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Kdatb" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="Kdatb_T" sap:label="Laufzeitbeginn" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+                <Property Name="Kdatb_T" Type="Edm.String" MaxLength="10" sap:label="Laufzeitbeginn (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Ernam" Type="Edm.String" MaxLength="12" sap:aggregation-role="dimension" sap:label="Unser Zeichen" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Ekgrp" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Einkäufergruppe" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Elikz" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:label="Endlief-Kz" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="Bukrs" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Buchungskreis" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Bedat" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="Bedat_T" sap:label="Bestelldatum" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+                <Property Name="Bedat_T" Type="Edm.String" MaxLength="10" sap:label="Bestelldatum (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Submi" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Submission" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Aedat" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="Aedat_T" sap:label="Angelegt am" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+                <Property Name="Aedat_T" Type="Edm.String" MaxLength="10" sap:label="Angelegt am (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Konnr" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="kontraktnummer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Anln2" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Anlagenunternummer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Etenr" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Einteilung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Knttp" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:label="Kontierungstyp" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Meins" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Mengeneinheit" sap:creatable="false" sap:updatable="false" sap:value-list="standard" sap:semantics="unit-of-measure"/>
+                <Property Name="Ihrez" Type="Edm.String" MaxLength="12" sap:aggregation-role="dimension" sap:label="Ihr Zeichen" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="NameTextc" Type="Edm.String" MaxLength="80" sap:aggregation-role="dimension" sap:label="Vollständiger Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Whgbtr" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false" sap:filterable="false" sap:text="Whgbtr_F" sap:unit="Waers" sap:updatable="false" sap:label="Restobligo"/>
+                <Property Name="Whgbtr_F" Type="Edm.String" MaxLength="60" sap:label="Restobligo (Formatiert)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Effwr" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false" sap:filterable="false" sap:text="Effwr_F" sap:unit="Waers" sap:updatable="false" sap:label="Restobligo"/>
+                <Property Name="Effwr_F" Type="Edm.String" MaxLength="60" sap:label="Restobligo (Formatiert)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Menge" Type="Edm.Decimal" Precision="42" Scale="3" sap:aggregation-role="measure" sap:creatable="false" sap:filterable="false" sap:text="Menge_F" sap:unit="Meins" sap:updatable="false" sap:label="Bestellmenge"/>
+                <Property Name="Menge_F" Type="Edm.String" MaxLength="60" sap:label="Bestellmenge (Formatiert)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Waers" sap:label="Währung (Stammdaten)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Waers_ID"/>
+                </Key>
+                <Property Name="Waers_ID" Type="Edm.String" Nullable="false" MaxLength="5" sap:text="WaersText" sap:label="Währung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="WaersText" Type="Edm.String" sap:label="Währung (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="WaersResult" sap:label="Währung (Gebuchte Daten)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Waers"/>
+                </Key>
+                <Property Name="Waers" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Währung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="EbelnC" Type="Edm.String" MaxLength="10" sap:label="Einkaufsbeleg" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Matnr" Type="Edm.String" MaxLength="40" sap:label="Materialnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Werks" Type="Edm.String" MaxLength="4" sap:label="Werk" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Lifnr" Type="Edm.String" MaxLength="10" sap:label="Lieferant" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Mwskz" Type="Edm.String" MaxLength="2" sap:label="Steuerkennzeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Titel" Type="Edm.String" MaxLength="40" sap:label="vertragstitel" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bsart" Type="Edm.String" MaxLength="4" sap:label="Einkaufsbelegart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ebelp" Type="Edm.String" MaxLength="5" sap:label="Effektivwert Bestellposition" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Unsez" Type="Edm.String" MaxLength="12" sap:label="Unser Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CoZuko" Type="Edm.String" MaxLength="9" sap:label="Zusatzkontierung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ekorg" Type="Edm.String" MaxLength="4" sap:label="Einkaufsorganisation" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Zekkn" Type="Edm.String" MaxLength="2" sap:label="Kontierungsnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Name1" Type="Edm.String" MaxLength="80" sap:label="Name Lieferant" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Txz01" Type="Edm.String" MaxLength="40" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kostl" Type="Edm.String" MaxLength="10" sap:label="Kostenstelle" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Sakto" Type="Edm.String" MaxLength="10" sap:label="Kostenart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Loekz" Type="Edm.String" MaxLength="1" sap:label="Lösch/Sperrkz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="PsPspPnr" Type="Edm.String" MaxLength="24" sap:label="PSP-Element" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Eindt" Type="Edm.String" MaxLength="10" sap:text="Eindt_T" sap:label="Lieferdatum" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Eindt_T" Type="Edm.String" sap:label="Lieferdatum (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matkl" Type="Edm.String" MaxLength="9" sap:label="Warengruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Anln1" Type="Edm.String" MaxLength="12" sap:label="Anlage" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Producttype" Type="Edm.String" MaxLength="2" sap:label="Produkttypgruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Mtart" Type="Edm.String" MaxLength="4" sap:label="Materialart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ebeln" Type="Edm.String" MaxLength="10" sap:label="Einkaufsbeleg" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bstyp" Type="Edm.String" MaxLength="1" sap:label="Belegtyp" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdate" Type="Edm.String" MaxLength="10" sap:text="Kdate_T" sap:label="Laufzeitende" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdate_T" Type="Edm.String" sap:label="Laufzeitende (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Erekz" Type="Edm.String" MaxLength="1" sap:label="Endrech-Kz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Gsber" Type="Edm.String" MaxLength="4" sap:label="Geschäftsbereich" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdatb" Type="Edm.String" MaxLength="10" sap:text="Kdatb_T" sap:label="Laufzeitbeginn" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdatb_T" Type="Edm.String" sap:label="Laufzeitbeginn (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ernam" Type="Edm.String" MaxLength="12" sap:label="Unser Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ekgrp" Type="Edm.String" MaxLength="3" sap:label="Einkäufergruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Elikz" Type="Edm.String" MaxLength="1" sap:label="Endlief-Kz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bukrs" Type="Edm.String" MaxLength="4" sap:label="Buchungskreis" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bedat" Type="Edm.String" MaxLength="10" sap:text="Bedat_T" sap:label="Bestelldatum" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bedat_T" Type="Edm.String" sap:label="Bestelldatum (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Submi" Type="Edm.String" MaxLength="10" sap:label="Submission" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Aedat" Type="Edm.String" MaxLength="10" sap:text="Aedat_T" sap:label="Angelegt am" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Aedat_T" Type="Edm.String" sap:label="Angelegt am (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Konnr" Type="Edm.String" MaxLength="10" sap:label="kontraktnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Anln2" Type="Edm.String" MaxLength="4" sap:label="Anlagenunternummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Etenr" Type="Edm.String" MaxLength="4" sap:label="Einteilung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Knttp" Type="Edm.String" MaxLength="1" sap:label="Kontierungstyp" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Meins" Type="Edm.String" MaxLength="3" sap:label="Mengeneinheit" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ihrez" Type="Edm.String" MaxLength="12" sap:label="Ihr Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="NameTextc" Type="Edm.String" MaxLength="80" sap:label="Vollständiger Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="Bstyp" sap:label="Belegtyp (Stammdaten)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Bstyp_ID"/>
+                </Key>
+                <Property Name="Bstyp_ID" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="BstypText" sap:label="Belegtyp" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="BstypText" Type="Edm.String" sap:label="Belegtyp (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="BstypResult" sap:label="Belegtyp (Gebuchte Daten)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Bstyp"/>
+                </Key>
+                <Property Name="Bstyp" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Belegtyp" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="EbelnC" Type="Edm.String" MaxLength="10" sap:label="Einkaufsbeleg" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Matnr" Type="Edm.String" MaxLength="40" sap:label="Materialnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Werks" Type="Edm.String" MaxLength="4" sap:label="Werk" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Lifnr" Type="Edm.String" MaxLength="10" sap:label="Lieferant" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Mwskz" Type="Edm.String" MaxLength="2" sap:label="Steuerkennzeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Titel" Type="Edm.String" MaxLength="40" sap:label="vertragstitel" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bsart" Type="Edm.String" MaxLength="4" sap:label="Einkaufsbelegart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ebelp" Type="Edm.String" MaxLength="5" sap:label="Effektivwert Bestellposition" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Unsez" Type="Edm.String" MaxLength="12" sap:label="Unser Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CoZuko" Type="Edm.String" MaxLength="9" sap:label="Zusatzkontierung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ekorg" Type="Edm.String" MaxLength="4" sap:label="Einkaufsorganisation" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Zekkn" Type="Edm.String" MaxLength="2" sap:label="Kontierungsnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Name1" Type="Edm.String" MaxLength="80" sap:label="Name Lieferant" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Txz01" Type="Edm.String" MaxLength="40" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kostl" Type="Edm.String" MaxLength="10" sap:label="Kostenstelle" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Sakto" Type="Edm.String" MaxLength="10" sap:label="Kostenart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Loekz" Type="Edm.String" MaxLength="1" sap:label="Lösch/Sperrkz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Waers" Type="Edm.String" MaxLength="5" sap:label="Währung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="PsPspPnr" Type="Edm.String" MaxLength="24" sap:label="PSP-Element" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Eindt" Type="Edm.String" MaxLength="10" sap:text="Eindt_T" sap:label="Lieferdatum" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Eindt_T" Type="Edm.String" sap:label="Lieferdatum (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matkl" Type="Edm.String" MaxLength="9" sap:label="Warengruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Anln1" Type="Edm.String" MaxLength="12" sap:label="Anlage" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Producttype" Type="Edm.String" MaxLength="2" sap:label="Produkttypgruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Mtart" Type="Edm.String" MaxLength="4" sap:label="Materialart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ebeln" Type="Edm.String" MaxLength="10" sap:label="Einkaufsbeleg" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdate" Type="Edm.String" MaxLength="10" sap:text="Kdate_T" sap:label="Laufzeitende" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdate_T" Type="Edm.String" sap:label="Laufzeitende (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Erekz" Type="Edm.String" MaxLength="1" sap:label="Endrech-Kz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Gsber" Type="Edm.String" MaxLength="4" sap:label="Geschäftsbereich" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdatb" Type="Edm.String" MaxLength="10" sap:text="Kdatb_T" sap:label="Laufzeitbeginn" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdatb_T" Type="Edm.String" sap:label="Laufzeitbeginn (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ernam" Type="Edm.String" MaxLength="12" sap:label="Unser Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ekgrp" Type="Edm.String" MaxLength="3" sap:label="Einkäufergruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Elikz" Type="Edm.String" MaxLength="1" sap:label="Endlief-Kz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bukrs" Type="Edm.String" MaxLength="4" sap:label="Buchungskreis" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bedat" Type="Edm.String" MaxLength="10" sap:text="Bedat_T" sap:label="Bestelldatum" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bedat_T" Type="Edm.String" sap:label="Bestelldatum (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Submi" Type="Edm.String" MaxLength="10" sap:label="Submission" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Aedat" Type="Edm.String" MaxLength="10" sap:text="Aedat_T" sap:label="Angelegt am" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Aedat_T" Type="Edm.String" sap:label="Angelegt am (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Konnr" Type="Edm.String" MaxLength="10" sap:label="kontraktnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Anln2" Type="Edm.String" MaxLength="4" sap:label="Anlagenunternummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Etenr" Type="Edm.String" MaxLength="4" sap:label="Einteilung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Knttp" Type="Edm.String" MaxLength="1" sap:label="Kontierungstyp" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Meins" Type="Edm.String" MaxLength="3" sap:label="Mengeneinheit" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ihrez" Type="Edm.String" MaxLength="12" sap:label="Ihr Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="NameTextc" Type="Edm.String" MaxLength="80" sap:label="Vollständiger Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="Erekz" sap:label="Endrech-Kz (Stammdaten)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Erekz_ID"/>
+                </Key>
+                <Property Name="Erekz_ID" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="ErekzText" sap:label="Endrech-Kz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ErekzText" Type="Edm.String" sap:label="Endrech-Kz (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="ErekzResult" sap:label="Endrech-Kz (Gebuchte Daten)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Erekz"/>
+                </Key>
+                <Property Name="Erekz" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Endrech-Kz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="EbelnC" Type="Edm.String" MaxLength="10" sap:label="Einkaufsbeleg" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Matnr" Type="Edm.String" MaxLength="40" sap:label="Materialnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Werks" Type="Edm.String" MaxLength="4" sap:label="Werk" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Lifnr" Type="Edm.String" MaxLength="10" sap:label="Lieferant" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Mwskz" Type="Edm.String" MaxLength="2" sap:label="Steuerkennzeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Titel" Type="Edm.String" MaxLength="40" sap:label="vertragstitel" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bsart" Type="Edm.String" MaxLength="4" sap:label="Einkaufsbelegart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ebelp" Type="Edm.String" MaxLength="5" sap:label="Effektivwert Bestellposition" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Unsez" Type="Edm.String" MaxLength="12" sap:label="Unser Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CoZuko" Type="Edm.String" MaxLength="9" sap:label="Zusatzkontierung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ekorg" Type="Edm.String" MaxLength="4" sap:label="Einkaufsorganisation" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Zekkn" Type="Edm.String" MaxLength="2" sap:label="Kontierungsnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Name1" Type="Edm.String" MaxLength="80" sap:label="Name Lieferant" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Txz01" Type="Edm.String" MaxLength="40" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kostl" Type="Edm.String" MaxLength="10" sap:label="Kostenstelle" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Sakto" Type="Edm.String" MaxLength="10" sap:label="Kostenart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Loekz" Type="Edm.String" MaxLength="1" sap:label="Lösch/Sperrkz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Waers" Type="Edm.String" MaxLength="5" sap:label="Währung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="PsPspPnr" Type="Edm.String" MaxLength="24" sap:label="PSP-Element" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Eindt" Type="Edm.String" MaxLength="10" sap:text="Eindt_T" sap:label="Lieferdatum" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Eindt_T" Type="Edm.String" sap:label="Lieferdatum (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matkl" Type="Edm.String" MaxLength="9" sap:label="Warengruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Anln1" Type="Edm.String" MaxLength="12" sap:label="Anlage" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Producttype" Type="Edm.String" MaxLength="2" sap:label="Produkttypgruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Mtart" Type="Edm.String" MaxLength="4" sap:label="Materialart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ebeln" Type="Edm.String" MaxLength="10" sap:label="Einkaufsbeleg" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bstyp" Type="Edm.String" MaxLength="1" sap:label="Belegtyp" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdate" Type="Edm.String" MaxLength="10" sap:text="Kdate_T" sap:label="Laufzeitende" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdate_T" Type="Edm.String" sap:label="Laufzeitende (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Gsber" Type="Edm.String" MaxLength="4" sap:label="Geschäftsbereich" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdatb" Type="Edm.String" MaxLength="10" sap:text="Kdatb_T" sap:label="Laufzeitbeginn" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdatb_T" Type="Edm.String" sap:label="Laufzeitbeginn (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ernam" Type="Edm.String" MaxLength="12" sap:label="Unser Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ekgrp" Type="Edm.String" MaxLength="3" sap:label="Einkäufergruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Elikz" Type="Edm.String" MaxLength="1" sap:label="Endlief-Kz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bukrs" Type="Edm.String" MaxLength="4" sap:label="Buchungskreis" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bedat" Type="Edm.String" MaxLength="10" sap:text="Bedat_T" sap:label="Bestelldatum" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bedat_T" Type="Edm.String" sap:label="Bestelldatum (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Submi" Type="Edm.String" MaxLength="10" sap:label="Submission" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Aedat" Type="Edm.String" MaxLength="10" sap:text="Aedat_T" sap:label="Angelegt am" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Aedat_T" Type="Edm.String" sap:label="Angelegt am (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Konnr" Type="Edm.String" MaxLength="10" sap:label="kontraktnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Anln2" Type="Edm.String" MaxLength="4" sap:label="Anlagenunternummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Etenr" Type="Edm.String" MaxLength="4" sap:label="Einteilung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Knttp" Type="Edm.String" MaxLength="1" sap:label="Kontierungstyp" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Meins" Type="Edm.String" MaxLength="3" sap:label="Mengeneinheit" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ihrez" Type="Edm.String" MaxLength="12" sap:label="Ihr Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="NameTextc" Type="Edm.String" MaxLength="80" sap:label="Vollständiger Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="Elikz" sap:label="Endlief-Kz (Stammdaten)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Elikz_ID"/>
+                </Key>
+                <Property Name="Elikz_ID" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="ElikzText" sap:label="Endlief-Kz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ElikzText" Type="Edm.String" sap:label="Endlief-Kz (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="ElikzResult" sap:label="Endlief-Kz (Gebuchte Daten)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Elikz"/>
+                </Key>
+                <Property Name="Elikz" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Endlief-Kz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="EbelnC" Type="Edm.String" MaxLength="10" sap:label="Einkaufsbeleg" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Matnr" Type="Edm.String" MaxLength="40" sap:label="Materialnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Werks" Type="Edm.String" MaxLength="4" sap:label="Werk" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Lifnr" Type="Edm.String" MaxLength="10" sap:label="Lieferant" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Mwskz" Type="Edm.String" MaxLength="2" sap:label="Steuerkennzeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Titel" Type="Edm.String" MaxLength="40" sap:label="vertragstitel" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bsart" Type="Edm.String" MaxLength="4" sap:label="Einkaufsbelegart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ebelp" Type="Edm.String" MaxLength="5" sap:label="Effektivwert Bestellposition" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Unsez" Type="Edm.String" MaxLength="12" sap:label="Unser Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CoZuko" Type="Edm.String" MaxLength="9" sap:label="Zusatzkontierung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ekorg" Type="Edm.String" MaxLength="4" sap:label="Einkaufsorganisation" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Zekkn" Type="Edm.String" MaxLength="2" sap:label="Kontierungsnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Name1" Type="Edm.String" MaxLength="80" sap:label="Name Lieferant" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Txz01" Type="Edm.String" MaxLength="40" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kostl" Type="Edm.String" MaxLength="10" sap:label="Kostenstelle" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Sakto" Type="Edm.String" MaxLength="10" sap:label="Kostenart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Loekz" Type="Edm.String" MaxLength="1" sap:label="Lösch/Sperrkz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Waers" Type="Edm.String" MaxLength="5" sap:label="Währung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="PsPspPnr" Type="Edm.String" MaxLength="24" sap:label="PSP-Element" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Eindt" Type="Edm.String" MaxLength="10" sap:text="Eindt_T" sap:label="Lieferdatum" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Eindt_T" Type="Edm.String" sap:label="Lieferdatum (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matkl" Type="Edm.String" MaxLength="9" sap:label="Warengruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Anln1" Type="Edm.String" MaxLength="12" sap:label="Anlage" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Producttype" Type="Edm.String" MaxLength="2" sap:label="Produkttypgruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Mtart" Type="Edm.String" MaxLength="4" sap:label="Materialart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ebeln" Type="Edm.String" MaxLength="10" sap:label="Einkaufsbeleg" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bstyp" Type="Edm.String" MaxLength="1" sap:label="Belegtyp" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdate" Type="Edm.String" MaxLength="10" sap:text="Kdate_T" sap:label="Laufzeitende" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdate_T" Type="Edm.String" sap:label="Laufzeitende (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Erekz" Type="Edm.String" MaxLength="1" sap:label="Endrech-Kz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Gsber" Type="Edm.String" MaxLength="4" sap:label="Geschäftsbereich" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdatb" Type="Edm.String" MaxLength="10" sap:text="Kdatb_T" sap:label="Laufzeitbeginn" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdatb_T" Type="Edm.String" sap:label="Laufzeitbeginn (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ernam" Type="Edm.String" MaxLength="12" sap:label="Unser Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ekgrp" Type="Edm.String" MaxLength="3" sap:label="Einkäufergruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bukrs" Type="Edm.String" MaxLength="4" sap:label="Buchungskreis" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bedat" Type="Edm.String" MaxLength="10" sap:text="Bedat_T" sap:label="Bestelldatum" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bedat_T" Type="Edm.String" sap:label="Bestelldatum (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Submi" Type="Edm.String" MaxLength="10" sap:label="Submission" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Aedat" Type="Edm.String" MaxLength="10" sap:text="Aedat_T" sap:label="Angelegt am" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Aedat_T" Type="Edm.String" sap:label="Angelegt am (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Konnr" Type="Edm.String" MaxLength="10" sap:label="kontraktnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Anln2" Type="Edm.String" MaxLength="4" sap:label="Anlagenunternummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Etenr" Type="Edm.String" MaxLength="4" sap:label="Einteilung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Knttp" Type="Edm.String" MaxLength="1" sap:label="Kontierungstyp" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Meins" Type="Edm.String" MaxLength="3" sap:label="Mengeneinheit" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ihrez" Type="Edm.String" MaxLength="12" sap:label="Ihr Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="NameTextc" Type="Edm.String" MaxLength="80" sap:label="Vollständiger Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="Meins" sap:label="Mengeneinheit (Stammdaten)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Meins_ID"/>
+                </Key>
+                <Property Name="Meins_ID" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="MeinsText" sap:label="Mengeneinheit" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MeinsText" Type="Edm.String" sap:label="Mengeneinheit (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="MeinsResult" sap:label="Mengeneinheit (Gebuchte Daten)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Meins"/>
+                </Key>
+                <Property Name="Meins" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Mengeneinheit" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="EbelnC" Type="Edm.String" MaxLength="10" sap:label="Einkaufsbeleg" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Matnr" Type="Edm.String" MaxLength="40" sap:label="Materialnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Werks" Type="Edm.String" MaxLength="4" sap:label="Werk" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Lifnr" Type="Edm.String" MaxLength="10" sap:label="Lieferant" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Mwskz" Type="Edm.String" MaxLength="2" sap:label="Steuerkennzeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Titel" Type="Edm.String" MaxLength="40" sap:label="vertragstitel" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bsart" Type="Edm.String" MaxLength="4" sap:label="Einkaufsbelegart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ebelp" Type="Edm.String" MaxLength="5" sap:label="Effektivwert Bestellposition" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Unsez" Type="Edm.String" MaxLength="12" sap:label="Unser Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CoZuko" Type="Edm.String" MaxLength="9" sap:label="Zusatzkontierung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ekorg" Type="Edm.String" MaxLength="4" sap:label="Einkaufsorganisation" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Zekkn" Type="Edm.String" MaxLength="2" sap:label="Kontierungsnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Name1" Type="Edm.String" MaxLength="80" sap:label="Name Lieferant" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Txz01" Type="Edm.String" MaxLength="40" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kostl" Type="Edm.String" MaxLength="10" sap:label="Kostenstelle" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Sakto" Type="Edm.String" MaxLength="10" sap:label="Kostenart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Loekz" Type="Edm.String" MaxLength="1" sap:label="Lösch/Sperrkz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Waers" Type="Edm.String" MaxLength="5" sap:label="Währung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="PsPspPnr" Type="Edm.String" MaxLength="24" sap:label="PSP-Element" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Eindt" Type="Edm.String" MaxLength="10" sap:text="Eindt_T" sap:label="Lieferdatum" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Eindt_T" Type="Edm.String" sap:label="Lieferdatum (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matkl" Type="Edm.String" MaxLength="9" sap:label="Warengruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Anln1" Type="Edm.String" MaxLength="12" sap:label="Anlage" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Producttype" Type="Edm.String" MaxLength="2" sap:label="Produkttypgruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Mtart" Type="Edm.String" MaxLength="4" sap:label="Materialart" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ebeln" Type="Edm.String" MaxLength="10" sap:label="Einkaufsbeleg" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bstyp" Type="Edm.String" MaxLength="1" sap:label="Belegtyp" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdate" Type="Edm.String" MaxLength="10" sap:text="Kdate_T" sap:label="Laufzeitende" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdate_T" Type="Edm.String" sap:label="Laufzeitende (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Erekz" Type="Edm.String" MaxLength="1" sap:label="Endrech-Kz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Gsber" Type="Edm.String" MaxLength="4" sap:label="Geschäftsbereich" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdatb" Type="Edm.String" MaxLength="10" sap:text="Kdatb_T" sap:label="Laufzeitbeginn" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kdatb_T" Type="Edm.String" sap:label="Laufzeitbeginn (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ernam" Type="Edm.String" MaxLength="12" sap:label="Unser Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ekgrp" Type="Edm.String" MaxLength="3" sap:label="Einkäufergruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Elikz" Type="Edm.String" MaxLength="1" sap:label="Endlief-Kz" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bukrs" Type="Edm.String" MaxLength="4" sap:label="Buchungskreis" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bedat" Type="Edm.String" MaxLength="10" sap:text="Bedat_T" sap:label="Bestelldatum" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bedat_T" Type="Edm.String" sap:label="Bestelldatum (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Submi" Type="Edm.String" MaxLength="10" sap:label="Submission" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Aedat" Type="Edm.String" MaxLength="10" sap:text="Aedat_T" sap:label="Angelegt am" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Aedat_T" Type="Edm.String" sap:label="Angelegt am (Beschreibung)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Konnr" Type="Edm.String" MaxLength="10" sap:label="kontraktnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Anln2" Type="Edm.String" MaxLength="4" sap:label="Anlagenunternummer" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Etenr" Type="Edm.String" MaxLength="4" sap:label="Einteilung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Knttp" Type="Edm.String" MaxLength="1" sap:label="Kontierungstyp" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ihrez" Type="Edm.String" MaxLength="12" sap:label="Ihr Zeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="NameTextc" Type="Edm.String" MaxLength="80" sap:label="Vollständiger Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="ODataQueryAdditionalMetadata" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ODataQueryMetadata"/>
+                </Key>
+                <Property Name="ODataQueryMetadata" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ODataQueryMetadataValue_Current" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ODataQueryMetadataValueAtDefine" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="xARDxZMM_C_CO_GETLIST_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="xARDxZMM_C_CO_GETLIST" EntityType="xARDxZMM_C_CO_GETLIST_CDS.xARDxZMM_C_CO_GETLISTType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="Waers" EntityType="xARDxZMM_C_CO_GETLIST_CDS.Waers" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="WaersResults" EntityType="xARDxZMM_C_CO_GETLIST_CDS.WaersResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="Bstyp" EntityType="xARDxZMM_C_CO_GETLIST_CDS.Bstyp" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="BstypResults" EntityType="xARDxZMM_C_CO_GETLIST_CDS.BstypResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="Erekz" EntityType="xARDxZMM_C_CO_GETLIST_CDS.Erekz" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ErekzResults" EntityType="xARDxZMM_C_CO_GETLIST_CDS.ErekzResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="Elikz" EntityType="xARDxZMM_C_CO_GETLIST_CDS.Elikz" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ElikzResults" EntityType="xARDxZMM_C_CO_GETLIST_CDS.ElikzResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="Meins" EntityType="xARDxZMM_C_CO_GETLIST_CDS.Meins" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="MeinsResults" EntityType="xARDxZMM_C_CO_GETLIST_CDS.MeinsResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="AdditionalMetadata" EntityType="xARDxZMM_C_CO_GETLIST_CDS.ODataQueryAdditionalMetadata" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotations Target="xARDxZMM_C_CO_GETLIST_CDS.xARDxZMM_C_CO_GETLISTType/Waers" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Currency ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="Waers"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Waers"/>
+                                    <PropertyValue Property="ValueListProperty" String="Waers_ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="WaersText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="xARDxZMM_C_CO_GETLIST_CDS.xARDxZMM_C_CO_GETLISTType/Bstyp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Belegtyp ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="Bstyp"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Bstyp"/>
+                                    <PropertyValue Property="ValueListProperty" String="Bstyp_ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BstypText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="xARDxZMM_C_CO_GETLIST_CDS.xARDxZMM_C_CO_GETLISTType/Erekz" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Endrech-Kz ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="Erekz"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Erekz"/>
+                                    <PropertyValue Property="ValueListProperty" String="Erekz_ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ErekzText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="xARDxZMM_C_CO_GETLIST_CDS.xARDxZMM_C_CO_GETLISTType/Elikz" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Endlief-Kz ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="Elikz"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Elikz"/>
+                                    <PropertyValue Property="ValueListProperty" String="Elikz_ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ElikzText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="xARDxZMM_C_CO_GETLIST_CDS.xARDxZMM_C_CO_GETLISTType/Meins" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Mengeneinheit ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="Meins"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Meins"/>
+                                    <PropertyValue Property="ValueListProperty" String="Meins_ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MeinsText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://m4d:443/sap/opu/odata/ard/ZMM_C_CO_GETLIST_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://m4d:443/sap/opu/odata/ard/ZMM_C_CO_GETLIST_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,157 @@
+{
+  "_version": "1.28.0",
+  "sap.app": {
+    "id": "ard.mm.co.polr.ardmmcopolr",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.9.2",
+      "toolsId": "2ba54417-94b1-4cde-96ed-d3f7b83e750d"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/ard/ZMM_C_CO_GETLIST_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": ["/ARD/ZMM_C_CO_GETLIST_CDS_VAN","annotation"],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "/ARD/ZMM_C_CO_GETLIST_CDS_VAN": {
+          "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='%2FARD%2FZMM_C_CO_GETLIST_CDS_VAN',Version='0001')/$value/",
+          "type": "ODataAnnotation",
+          "settings": {
+              "localUri": "localService//ARD/ZMM_C_CO_GETLIST_CDS_VAN.xml"
+          }
+      },
+      "annotation": {
+          "type": "ODataAnnotation",
+          "uri": "annotations/annotation.xml",
+          "settings": {
+              "localUri": "annotations/annotation.xml"
+          }
+      },
+      "mainService2": {
+        "uri": "/sap/opu/odata/ard/MM_CO_FIORI_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": ["annotation2"],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "annotation2": {
+          "type": "ODataAnnotation",
+          "uri": "annotations/annotation2.xml",
+          "settings": {
+              "localUri": "annotations/annotation2.xml"
+          }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "fullWidth": true
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.84.30",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ard.mm.co.polr.ardmmcopolr.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      },
+      "m2": {
+        "dataSource": "mainService2",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "ard.mm.co.polr.ardmmcopolr.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteMain",
+          "pattern": ":?query:",
+          "target": [
+            "TargetMain"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetMain": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Main",
+          "viewName": "Main"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "ard.mm.co.polr.ardmmcopolr.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}
