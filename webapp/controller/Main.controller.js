@@ -11,6 +11,11 @@ function (Controller, JSONModel, MessageToast) {
 
     return Controller.extend("ard.mm.co.polr.ardmmcopolr.controller.Main", {
         onInit: function (oEvent) {
+            var oFormatSettings = sap.ui.getCore().getConfiguration().getFormatSettings();
+            if (oFormatSettings) {
+                oFormatSettings.setLegacyDateFormat("1");  //see SU3 Defaults>Date Format 1=dd.MM.yyyy
+            }	
+
             var oView = this.getView();
             //debugger;
             oView.byId("smartFilterBar").setModel(this.getOwnerComponent().getModel("m2"));

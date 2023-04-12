@@ -29,6 +29,9 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+
+                //sap.ui.getCore().getConfiguration().getFormatSettings().setDatePattern("short", "dd.MM.YYYY");
+
             }
         });
     }
