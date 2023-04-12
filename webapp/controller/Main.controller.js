@@ -19,7 +19,7 @@ function (Controller, JSONModel, MessageToast,Filter,FilterOperator) {
             }	
 
             var oView = this.getView();
-            //debugger;
+          
             oView.byId("smartFilterBar").setModel(this.getOwnerComponent().getModel("m2"));
             var mFBConditions = new JSONModel({
                 allFilters: "",
@@ -75,30 +75,29 @@ function (Controller, JSONModel, MessageToast,Filter,FilterOperator) {
             mFBConditions.setProperty("/filtersTextInfo", arrayOfFilters);
             oSource.getModel("fbConditions").updateBindings();
         },
-        onFilter:function(oEvent){
-            debugger;
-            var oView = this.getView();
-            var filterBar = oView.byId("smartFilterBar");
-            var allFilters = filterBar.getFilters();
-            var aFilter=[];
-            for (let index = 0; index < allFilters[0].aFilters.length; index++) {
-                const element = allFilters[0].aFilters[index];
-                if(element.aFilters[0].sPath==='Eindt'){
-                    var oValue=element.aFilters[0].oValue1;
-                    oValue=oValue.toISOString().split("T")[0].replaceAll("-",'');
-
-                    aFilter.push(new Filter("Name", element.aFilters[0].sOperator, oValue,element.aFilters[0].oValue2)) 
-                }
-                else{
-                    aFilter.push(allFilters[index])
-                }
-            }
-        },
         onEblenClick:function(oEvent){
             var oContext=oEvent.getSource().getBindingContext();
             var oObject=oContext.getObject();
             var oParam=`?PurchaseOrder=0${oObject.Ebeln}&uitype=advanced`
             this.navToAnotherApp("PurchaseOrder","display",oParam)
+        },
+        onBeforeRebindTable:function(oEvent){
+            if(oEvent.getParameter('bindingParams').filters && oEvent.getParameter('bindingParams').filters.length>0){
+                var oFilter= oEvent.getParameter('bindingParams').filters[0].aFilters;
+                if(oFilter && oFilter.length>0){
+                    for (let index = 0; index < oFilter.length; index++) {
+                        const element = oFilter[index];
+                        if(element.sPath && (element.sPath==="Eindt" || element.sPath==="Bedat" || element.sPath==="Aedat" || element.sPath==="Kdate" ||  element.sPath==="Kdatb")){
+                            element.oValue1=element.oValue1?element.oValue1.toISOString().split("T")[0].replaceAll("-",''):undefined;
+                            element.oValue2=element.oValue2?element.oValue2.toISOString().split("T")[0].replaceAll("-",''):undefined;
+                        }
+                        if(element.aFilters && (element.aFilters[0].sPath==="Eindt" || element.aFilters[0].sPath==="Bedat" || element.aFilters[0].sPath==="Aedat" || element.aFilters[0].sPath==="Kdate" ||  element.aFilters[0].sPath==="Kdatb") ){
+                            element.aFilters[0].oValue1=element.aFilters[0].oValue1?element.aFilters[0].oValue1.toISOString().split("T")[0].replaceAll("-",''):undefined;
+                            element.aFilters[0].oValue2=element.aFilters[0].oValue2?element.aFilters[0].oValue2.toISOString().split("T")[0].replaceAll("-",''):undefined;
+                        }
+                    }
+                }
+            }
         },
         navToAnotherApp: function(semanticObject, action, param) {
             var oCrossAppNavigator = sap.ushell.Container.getService("CrossApplicationNavigation");

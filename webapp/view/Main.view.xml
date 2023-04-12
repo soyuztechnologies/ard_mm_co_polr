@@ -44,7 +44,8 @@
 			smartFilterId="smartFilterBar" tableType="AnalyticalTable" 
             useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" 
             useTablePersonalisation="true" header="Ausgabefelder" showRowCount="true" 
-            persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" 
+            persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true"
+			beforeRebindTable="onBeforeRebindTable" 
             class="sapUiResponsiveContentPadding" editTogglable="false" app:useSmartToggle="false">
 				<table:AnalyticalTable visibleRowCountMode="Auto"
 						showColumnVisibilityMenu="false" enableBusyIndicator="false" rowSelectionChange="onRowSelectionChange">

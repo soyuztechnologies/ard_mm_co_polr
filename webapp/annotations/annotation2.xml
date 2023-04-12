@@ -412,6 +412,7 @@
                 <Annotation Term="Common.Label" String="Sperrkennzeichen/Löschkennzeichen" />
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Eindt">
+                 <!-- <Annotation Term="Common.FilterDefaultValue" String="F" /> -->
                 <Annotation Term="Common.Label" String="Lieferdatum" />
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Unsez">
