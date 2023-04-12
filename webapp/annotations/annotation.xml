@@ -236,7 +236,7 @@
                             </Annotation>
                         </Record>
 
-                        <Record Type="UI.DataField">
+                        <!-- <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="{i18n>MEINS}" />
                             <PropertyValue Property="Value" Path="Meins" />
                             <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
@@ -244,7 +244,7 @@
                                     <PropertyValue Property="width" String="9rem" />
                                 </Record>
                             </Annotation>
-                        </Record>
+                        </Record> -->
 
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="{i18n>Matnr}" />

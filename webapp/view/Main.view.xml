@@ -28,7 +28,8 @@
 				<VBox id="_IDGenVBox1">
 					<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="EtListSet" 
                                     persistencyKey="SmartFilter_Explored" 
-									 filterChange = "onFiltersChanged"
+									 filterChange = "onFiltersChanged" 
+									 search="onFilter"
 									enableBasicSearch="false" liveMode="false" >
                         <!-- layout data used to make the table growing but the filter bar fixed -->
                         <smartFilterBar:layoutData>

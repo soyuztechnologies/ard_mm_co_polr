@@ -1,12 +1,14 @@
 sap.ui.define([
 "sap/ui/core/mvc/Controller",
 "sap/ui/model/json/JSONModel",
-"sap/m/MessageToast"
+"sap/m/MessageToast",
+"sap/ui/model/Filter",
+"sap/ui/model/FilterOperator"
 ],
 /**
  * @param {typeof sap.ui.core.mvc.Controller} Controller
  */
-function (Controller, JSONModel, MessageToast) {
+function (Controller, JSONModel, MessageToast,Filter,FilterOperator) {
     "use strict";
 
     return Controller.extend("ard.mm.co.polr.ardmmcopolr.controller.Main", {
@@ -72,6 +74,25 @@ function (Controller, JSONModel, MessageToast) {
             //MessageToast.show("FilterBar filters are changed!");
             mFBConditions.setProperty("/filtersTextInfo", arrayOfFilters);
             oSource.getModel("fbConditions").updateBindings();
+        },
+        onFilter:function(oEvent){
+            debugger;
+            var oView = this.getView();
+            var filterBar = oView.byId("smartFilterBar");
+            var allFilters = filterBar.getFilters();
+            var aFilter=[];
+            for (let index = 0; index < allFilters[0].aFilters.length; index++) {
+                const element = allFilters[0].aFilters[index];
+                if(element.aFilters[0].sPath==='Eindt'){
+                    var oValue=element.aFilters[0].oValue1;
+                    oValue=oValue.toISOString().split("T")[0].replaceAll("-",'');
+
+                    aFilter.push(new Filter("Name", element.aFilters[0].sOperator, oValue,element.aFilters[0].oValue2)) 
+                }
+                else{
+                    aFilter.push(allFilters[index])
+                }
+            }
         },
         onEblenClick:function(oEvent){
             var oContext=oEvent.getSource().getBindingContext();
