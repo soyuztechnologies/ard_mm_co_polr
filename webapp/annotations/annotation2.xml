@@ -421,17 +421,70 @@
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Ihrez">
                 <Annotation Term="Common.Label" String="Ihr Zeichen" />
             </Annotations>
-            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Producttype">
-                <Annotation Term="Common.Label" String="Produkttypgruppe" />
-            </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Elikz">
                 <Annotation Term="Common.Label" String="Endlieferungskennzeichen" />
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="true" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="DeliveryStatusSet" />
+                        <PropertyValue Property="FetchValues" Int="1" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Elikz" />
+                                    <PropertyValue Property="ValueListProperty" String="Key" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Value" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Effwr">
                 <Annotation Term="Common.Label" String="Effektivwert Bestellposition" />
             </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Erekz" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Code"/>
+						<PropertyValue Property="CollectionPath" String="DeliveryStatusSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Erekz"/>
+									<PropertyValue Property="ValueListProperty" String="Key"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Value"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Erekz">
                 <Annotation Term="Common.Label" String="Endrechnungskennzeichen" />
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="true" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="DeliveryStatusSet" />
+                        <PropertyValue Property="FetchValues" Int="1" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Erekz" />
+                                    <PropertyValue Property="ValueListProperty" String="Key" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Value" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Menge">
                 <Annotation Term="Common.Label" String="Bestellmenge" />
@@ -441,6 +494,24 @@
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Knttp">
                 <Annotation Term="Common.Label" String="Kontierungstyp" />
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="true" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="C_MassUpdtAcctAssgmtCatVH" />
+                        <PropertyValue Property="FetchValues" Int="1" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Knttp" />
+                                    <PropertyValue Property="ValueListProperty" String="AccountAssignmentCategory" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="AcctAssignmentCategoryName" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Sakto">
                 <Annotation Term="Common.Label" String="Sachkonto" />
@@ -504,6 +575,7 @@
                 </Annotation>
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Producttype">
+                <Annotation Term="Common.Label" String="Produkttypgruppe" />
                 <Annotation Term="Common.ValueListWithFixedValues" Bool="true" />
                 <Annotation Term="Common.ValueList">
                     <Record Type="Common.ValueListType">
