@@ -35,6 +35,34 @@
                         <smartFilterBar:layoutData>
                             <FlexItemData shrinkFactor="0"/>
                         </smartFilterBar:layoutData>
+						<!-- <smartFilterBar:controlConfiguration>
+							<smartFilterBar:ControlConfiguration key="Bedat" index="3" id="field1"
+														label="Bedat"
+														visibleInAdvancedArea="true" groupId="_BASIC">
+									<smartFilterBar:customControl>
+										<DateRangeSelection
+											id="DRS1"
+											class="DRS1"
+											value= "{
+												'type': 'sap.ui.model.type.DateInterval',
+												'formatOptions': {
+													'pattern': 'dd.MM.yyyy'
+												},
+												'parts': [
+													{
+														'type': 'sap.ui.model.type.Date',
+														'path': '/start'
+													},
+													{
+														'type': 'sap.ui.model.type.Date',
+														'path': '/end'
+													}
+												]
+											}"
+											change="handleChange"/>
+									</smartFilterBar:customControl>
+							</smartFilterBar:ControlConfiguration> 
+						</smartFilterBar:controlConfiguration> -->
                     </smartFilterBar:SmartFilterBar>
 				</VBox>
 			</f:DynamicPageHeader>

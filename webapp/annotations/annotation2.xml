@@ -381,23 +381,23 @@
                 <Annotation Term="Common.Label" String="Anlagenunternummer" />
                 <Annotation Term="Common.ValueList">
                     <Record Type="Common.ValueListType">
-                        <PropertyValue Property="CollectionPath" String="xARDxZMM_VH_ANN2" />
+                        <PropertyValue Property="CollectionPath" String="I_FixedAssetStdVH" />
                         <PropertyValue Property="Parameters">
                             <Collection>
                                 <Record Type="Common.ValueListParameterInOut">
                                     <PropertyValue Property="LocalDataProperty" PropertyPath="Anln2" />
-                                    <PropertyValue Property="ValueListProperty" String="Anln2" />
+                                    <PropertyValue Property="ValueListProperty" String="FixedAsset" />
                                 </Record>
                                 <Record Type="Common.ValueListParameterInOut">
                                     <PropertyValue Property="LocalDataProperty" PropertyPath="Bukrs" />
-                                    <PropertyValue Property="ValueListProperty" String="Bukrs" />
+                                    <PropertyValue Property="ValueListProperty" String="CompanyCode" />
                                 </Record>
                                 <Record Type="Common.ValueListParameterInOut">
                                     <PropertyValue Property="LocalDataProperty" PropertyPath="Anln1" />
-                                    <PropertyValue Property="ValueListProperty" String="Anln1" />
+                                    <PropertyValue Property="ValueListProperty" String="MasterFixedAsset" />
                                 </Record>
                                 <Record Type="Common.ValueListParameterOut">
-                                    <PropertyValue Property="ValueListProperty" String="Bezei20" />
+                                    <PropertyValue Property="ValueListProperty" String="FixedAssetDescription" />
                                 </Record>
                             </Collection>
                         </PropertyValue>
@@ -417,6 +417,24 @@
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Unsez">
                 <Annotation Term="Common.Label" String="Unser Zeichen" />
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="true" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="DeliveryStatusSet" />
+                        <PropertyValue Property="FetchValues" Int="1" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Unsez" />
+                                    <PropertyValue Property="ValueListProperty" String="Key" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Value" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Ihrez">
                 <Annotation Term="Common.Label" String="Ihr Zeichen" />
@@ -494,7 +512,6 @@
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Knttp">
                 <Annotation Term="Common.Label" String="Kontierungstyp" />
-                <Annotation Term="Common.ValueListWithFixedValues" Bool="true" />
                 <Annotation Term="Common.ValueList">
                     <Record Type="Common.ValueListType">
                         <PropertyValue Property="CollectionPath" String="C_MassUpdtAcctAssgmtCatVH" />
@@ -515,6 +532,27 @@
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Sakto">
                 <Annotation Term="Common.Label" String="Sachkonto" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="I_GLAccountInCompanyCodeStdVH" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Sakto" />
+                                    <PropertyValue Property="ValueListProperty" String="GLAccount" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Bukrs" />
+                                    <PropertyValue Property="ValueListProperty" String="CompanyCode" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="GLAccount_Text" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/PsPspPnr">
                 <Annotation Term="Common.Label" String="PSP-Element" />
@@ -606,18 +644,17 @@
                                     <PropertyValue Property="LocalDataProperty" PropertyPath="Ernam" />
                                     <PropertyValue Property="ValueListProperty" String="UserID" />
                                 </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="PersonFullName" />
+                                </Record>
                                 <Record Type="Common.ValueListParameterOut">
-                                    <PropertyValue Property="ValueListProperty" String="PurchasingGroup" />
+                                    <PropertyValue Property="ValueListProperty" String="UserDescription" />
                                 </Record>
                                 <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Ekorg" />
-                                    <PropertyValue Property="ValueListProperty" String="PurchasingOrganization" />
+                                    <PropertyValue Property="ValueListProperty" String="FirstName" />
                                 </Record>
-                                <Record Type="Common.ValueListParameterOut">
-                                    <PropertyValue Property="ValueListProperty" String="PurchaseOrderType" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterOut">
-                                    <PropertyValue Property="ValueListProperty" String="PersonFullName" />
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="LastName" />
                                 </Record>
                             </Collection>
                         </PropertyValue>
@@ -702,7 +739,27 @@
                     </Collection>
                 </Annotation>
             </Annotations>
-            
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.C_PurOrdCreatedByValHelp">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="UserID" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="UserDescription" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PersonFullName" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FirstName" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LastName" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>
