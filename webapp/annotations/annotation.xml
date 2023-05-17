@@ -49,6 +49,15 @@
                             </Annotation>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{i18n>WKURS}" />
+                            <PropertyValue Property="Value" Path="Wkurs_F" />
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="{i18n>BEDAT}" />
                             <PropertyValue Property="Value" Path="Bedat" />
                             <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
@@ -56,7 +65,7 @@
                                     <PropertyValue Property="width" String="8rem" />
                                 </Record>
                             </Annotation>
-                        </Record>
+                        </Record>                        
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="{i18n>Ebelp}" />
                             <PropertyValue Property="Value" Path="Ebelp" />

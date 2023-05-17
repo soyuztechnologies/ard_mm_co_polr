@@ -35,9 +35,9 @@
                         <smartFilterBar:layoutData>
                             <FlexItemData shrinkFactor="0"/>
                         </smartFilterBar:layoutData>
-						<!-- <smartFilterBar:controlConfiguration>
-							<smartFilterBar:ControlConfiguration key="Bedat" index="3" id="field1"
-														label="Bedat"
+						<smartFilterBar:controlConfiguration>
+							<smartFilterBar:ControlConfiguration key="Bedat" index="7" id="field1"
+														label="{i18n>BEDAT}"
 														visibleInAdvancedArea="true" groupId="_BASIC">
 									<smartFilterBar:customControl>
 										<DateRangeSelection
@@ -62,7 +62,59 @@
 											change="handleChange"/>
 									</smartFilterBar:customControl>
 							</smartFilterBar:ControlConfiguration> 
-						</smartFilterBar:controlConfiguration> -->
+							<smartFilterBar:ControlConfiguration key="Eindt" index="16" id="Eindt"
+														label="{i18n>Eindt}"
+														visibleInAdvancedArea="true" groupId="_BASIC">
+									<smartFilterBar:customControl>
+										<DateRangeSelection
+											id="DRS2"
+											class="DRS2"
+											value= "{
+												'type': 'sap.ui.model.type.DateInterval',
+												'formatOptions': {
+													'pattern': 'dd.MM.yyyy'
+												},
+												'parts': [
+													{
+														'type': 'sap.ui.model.type.Date',
+														'path': '/start'
+													},
+													{
+														'type': 'sap.ui.model.type.Date',
+														'path': '/end'
+													}
+												]
+											}"
+											change="handleChange"/>
+									</smartFilterBar:customControl>
+							</smartFilterBar:ControlConfiguration> 
+							<smartFilterBar:ControlConfiguration key="Aedat" index="6" id="Aedat"
+														label="{i18n>AEDAT}"
+														visibleInAdvancedArea="true" groupId="_BASIC">
+									<smartFilterBar:customControl>
+										<DateRangeSelection
+											id="AedatDRS1"
+											class="DRS1"
+											value= "{
+												'type': 'sap.ui.model.type.DateInterval',
+												'formatOptions': {
+													'pattern': 'dd.MM.yyyy'
+												},
+												'parts': [
+													{
+														'type': 'sap.ui.model.type.Date',
+														'path': '/start'
+													},
+													{
+														'type': 'sap.ui.model.type.Date',
+														'path': '/end'
+													}
+												]
+											}"
+											change="handleChange"/>
+									</smartFilterBar:customControl>
+							</smartFilterBar:ControlConfiguration> 
+						</smartFilterBar:controlConfiguration>
                     </smartFilterBar:SmartFilterBar>
 				</VBox>
 			</f:DynamicPageHeader>
