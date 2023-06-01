@@ -332,7 +332,7 @@
                     </Record>
                 </Annotation>
             </Annotations>
-            
+
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/CoZuko">
                 <Annotation Term="Common.Label" String="Zusatzkontierung" />
                 <Annotation Term="Common.ValueList">
@@ -412,7 +412,7 @@
                 <Annotation Term="Common.Label" String="Sperrkennzeichen/Löschkennzeichen" />
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Eindt">
-                 <!-- <Annotation Term="Common.FilterDefaultValue" String="F" /> -->
+                <!-- <Annotation Term="Common.FilterDefaultValue" String="F" /> -->
                 <Annotation Term="Common.Label" String="Lieferdatum" />
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Unsez">
@@ -464,25 +464,25 @@
                 <Annotation Term="Common.Label" String="Effektivwert Bestellposition" />
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Erekz" xmlns="http://docs.oasis-open.org/odata/ns/edm">
-				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
-					<Record>
-						<PropertyValue Property="Label" String="Code"/>
-						<PropertyValue Property="CollectionPath" String="DeliveryStatusSet"/>
-						<PropertyValue Property="SearchSupported" Bool="true"/>
-						<PropertyValue Property="Parameters">
-							<Collection>
-								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
-									<PropertyValue Property="LocalDataProperty" PropertyPath="Erekz"/>
-									<PropertyValue Property="ValueListProperty" String="Key"/>
-								</Record>
-								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
-									<PropertyValue Property="ValueListProperty" String="Value"/>
-								</Record>
-							</Collection>
-						</PropertyValue>
-					</Record>
-				</Annotation>
-			</Annotations>
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Code" />
+                        <PropertyValue Property="CollectionPath" String="DeliveryStatusSet" />
+                        <PropertyValue Property="SearchSupported" Bool="true" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Erekz" />
+                                    <PropertyValue Property="ValueListProperty" String="Key" />
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Value" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Erekz">
                 <Annotation Term="Common.Label" String="Endrechnungskennzeichen" />
                 <Annotation Term="Common.ValueListWithFixedValues" Bool="true" />
@@ -552,7 +552,6 @@
                         </PropertyValue>
                     </Record>
                 </Annotation>
-                
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/PsPspPnr">
                 <Annotation Term="Common.Label" String="PSP-Element" />
@@ -568,6 +567,12 @@
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Bedat">
                 <Annotation Term="Common.Label" String="Laufzeitende" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Kdate">
+                <Annotation Term="Common.Label" String="Enddatum der Gültigkeit" />
+            </Annotations>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Kdatb">
+                <Annotation Term="Common.Label" String="Gültigkeitsbeginndatum" />
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Bsart">
                 <Annotation Term="Common.Label" String="Bestellart" />
@@ -633,34 +638,7 @@
                     </Record>
                 </Annotation>
             </Annotations>
-            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Ernam">
-                <Annotation Term="Common.Label" String="Angelegt von" />
-                <Annotation Term="Common.ValueList">
-                    <Record Type="Common.ValueListType">
-                        <PropertyValue Property="CollectionPath" String="C_PurOrdCreatedByValHelp" />
-                        <PropertyValue Property="Parameters">
-                            <Collection>
-                                <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Ernam" />
-                                    <PropertyValue Property="ValueListProperty" String="UserID" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="ValueListProperty" String="PersonFullName" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterOut">
-                                    <PropertyValue Property="ValueListProperty" String="UserDescription" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="ValueListProperty" String="FirstName" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="ValueListProperty" String="LastName" />
-                                </Record>
-                            </Collection>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
-            </Annotations>
+
             <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Etenr">
                 <Annotation Term="Common.Label" String="Zeitplanlinie" />
             </Annotations>
@@ -716,7 +694,6 @@
                         <PropertyPath>Titel</PropertyPath>
                     </Collection>
                 </Annotation>
-                
             </Annotations>
             <Annotations Target="ARD.MM_CO_FIORI_SRV.C_MM_SmplSupplierValueHelpType">
                 <Annotation Term="UI.LineItem">
@@ -739,25 +716,36 @@
                     </Collection>
                 </Annotation>
             </Annotations>
-            <Annotations Target="ARD.MM_CO_FIORI_SRV.C_PurOrdCreatedByValHelp">
-                <Annotation Term="UI.LineItem">
-                    <Collection>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="UserID" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="UserDescription" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="PersonFullName" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="FirstName" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="LastName" />
-                        </Record>
-                    </Collection>
+            <Annotations Target="ARD.MM_CO_FIORI_SRV.EtList/Ernam">
+                <Annotation Term="Common.Label" String="Angelegt von" />
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="xARDxC_PurOrdCreatedByValHelp" />
+                        <PropertyValue Property="SearchSupported" Bool="true" />
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Ernam" />
+                                    <PropertyValue Property="ValueListProperty" String="UserID" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="UserDescription" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PersonFullName" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="FirstName" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LastName" />
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreatedByUser" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
                 </Annotation>
             </Annotations>
         </Schema>

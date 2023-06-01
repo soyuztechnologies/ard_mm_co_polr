@@ -16,20 +16,6 @@
             <Annotations Target="xARDxZMM_C_CO_GETLIST_CDS.xARDxZMM_C_CO_GETLISTType">
                 <Annotation Term="UI.LineItem">
                     <Collection>
-                        <!-- <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="{i18n>TabEbeln}" />
-                            <PropertyValue Property="Value" Path="Ebeln" />
-                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
-                                <Record>
-                                    <PropertyValue Property="width" String="8rem" />
-                                </Record>
-                            </Annotation>
-                        </Record> -->
-                        <!-- <Record Type="UI.DataFieldWithIntentBasedNavigation">
-                            <PropertyValue Property="Value" Path="Ebeln"/>
-                            <PropertyValue Property="SemanticObject" String="PurchaseOrder"/>
-                            <PropertyValue Property="Action" String="display"/>
-                        </Record> -->
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="{i18n>BSART}" />
                             <PropertyValue Property="Value" Path="Bsart" />
@@ -215,7 +201,7 @@
                         </Record>
 
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="{i18n>EFFWR}" />
+                            <PropertyValue Property="Label" String="{i18n>WHGBTR}" />
                             <PropertyValue Property="Value" Path="Whgbtr" />
                             <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
                                 <Record>
@@ -236,7 +222,7 @@
 
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="{i18n>MENGE}" />
-                            <PropertyValue Property="Value" Path="Menge" />
+                            <PropertyValue Property="Value" Path="Menge_F" />
                             
                             <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
                                 <Record>

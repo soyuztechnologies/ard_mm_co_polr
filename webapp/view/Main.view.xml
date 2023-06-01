@@ -114,6 +114,58 @@
 											change="handleChange"/>
 									</smartFilterBar:customControl>
 							</smartFilterBar:ControlConfiguration> 
+							<!-- <smartFilterBar:ControlConfiguration key="Kdate" id="Kdate"
+														label="{i18n>Kdate}"
+														visibleInAdvancedArea="true" groupId="_BASIC">
+									<smartFilterBar:customControl>
+										<DateRangeSelection
+											id="KdateDRS1"
+											class="DRS1"
+											value= "{
+												'type': 'sap.ui.model.type.DateInterval',
+												'formatOptions': {
+													'pattern': 'dd.MM.yyyy'
+												},
+												'parts': [
+													{
+														'type': 'sap.ui.model.type.Date',
+														'path': '/start'
+													},
+													{
+														'type': 'sap.ui.model.type.Date',
+														'path': '/end'
+													}
+												]
+											}"
+											change="handleChange"/>
+									</smartFilterBar:customControl>
+							</smartFilterBar:ControlConfiguration> 
+							<smartFilterBar:ControlConfiguration key="Kdatb" id="Kdatb"
+														label="{i18n>Kdatb}"
+														visibleInAdvancedArea="true" groupId="_BASIC">
+									<smartFilterBar:customControl>
+										<DateRangeSelection
+											id="KdatbDRS1"
+											class="DRS1"
+											value= "{
+												'type': 'sap.ui.model.type.DateInterval',
+												'formatOptions': {
+													'pattern': 'dd.MM.yyyy'
+												},
+												'parts': [
+													{
+														'type': 'sap.ui.model.type.Date',
+														'path': '/start'
+													},
+													{
+														'type': 'sap.ui.model.type.Date',
+														'path': '/end'
+													}
+												]
+											}"
+											change="handleChange"/>
+									</smartFilterBar:customControl>
+							</smartFilterBar:ControlConfiguration>  -->
 						</smartFilterBar:controlConfiguration>
                     </smartFilterBar:SmartFilterBar>
 				</VBox>
